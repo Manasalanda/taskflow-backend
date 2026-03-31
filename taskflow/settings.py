@@ -214,12 +214,36 @@ SIMPLE_JWT = {
 }
 
 # ── CORS ──
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:5173',
+#     'http://localhost:3000',
+#     os.getenv('FRONTEND_URL', 'http://localhost:5173'),
+# ]
+# CORS_ALLOW_CREDENTIALS = True
+
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
     'http://localhost:3000',
+    'https://taskflow-frontend-red.vercel.app',
     os.getenv('FRONTEND_URL', 'http://localhost:5173'),
 ]
+
+CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
+
 
 # ── EMAIL ──
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
